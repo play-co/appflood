@@ -5,7 +5,7 @@
 		"libraries": [
 		],
 		"jars": [
-			"./appflood-1.50.jar"
+			"./appflood-1.51.jar"
 		],
 		"injectionXML": "manifest.xml",
 		"injectionXSL": "manifest.xsl"
