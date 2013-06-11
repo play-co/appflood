@@ -1,0 +1,35 @@
+<!--START_PLUGINS_MANIFEST-->
+	<!--AppFlood-->
+	<permission android:name="com.tealeaf.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.tealeaf.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+<!--END_PLUGINS_MANIFEST-->
+<!--START_PLUGINS_APPLICATION-->
+	<!--AppFlood-->
+	<meta-data android:name="AppFloodAppKey" android:value="" />
+	<meta-data android:name="AppFloodSecretKey" android:value="" />
+	<activity android:name="com.appflood.AFPanelActivity" android:configChanges="keyboardHidden"></activity>
+	<activity android:name="com.appflood.AFFullScreenActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent" android:launchMode="singleTask"></activity>
+	<activity android:name="com.appflood.notification.NotificationActivity" >
+		<intent-filter>
+			<action android:name="" />
+		</intent-filter>
+	</activity>
+	<activity ￼￼￼￼￼￼￼android:name="com.appflood.AFListActivity" android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:theme="@android:style/Theme.Translucent" >
+		<intent-filter>
+			<action android:name="" />
+		</intent-filter>
+	</activity>
+	<!-- gcm service and receiver -->
+	<service android:name="com.google.android.gcm.GCMAFIntentService" />
+	<receiver android:name="com.google.android.gcm.GCMAFBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+		<intent-filter>
+			<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+			<category android:name="#your packagename#" />
+		</intent-filter>
+	</receiver>
+<!--END_PLUGINS_APPLICATION-->
+

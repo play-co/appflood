@@ -1,0 +1,12 @@
+{
+		"copyFiles": [
+			"AppFloodPlugin.java"
+		],
+		"libraries": [
+		],
+		"jars": [
+			"./appflood-1.50.jar"
+		],
+		"injectionXML": "manifest.xml",
+		"injectionXSL": "manifest.xsl"
+}
