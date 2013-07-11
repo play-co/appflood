@@ -43,7 +43,7 @@ public class AppFloodPlugin implements IPlugin {
 
 	public void onCreate(Activity activity, Bundle savedInstanceState) {
 		PackageManager manager = activity.getBaseContext().getPackageManager();
-		String[] keys = {"AppFloodAppKey", "AppFloodSecretKey"};
+		String[] keys = {"appFloodAppKey", "appFloodSecretKey"};
 		try {
 			Bundle meta = manager.getApplicationInfo(activity.getApplicationContext().getPackageName(),
 					PackageManager.GET_META_DATA).metaData;
@@ -56,8 +56,8 @@ public class AppFloodPlugin implements IPlugin {
 			logger.log("Exception while loading manifest keys:", e);
 		}
 
-		String AppKey = manifestKeyMap.get("AppFloodAppKey");
-		String SecretKey = manifestKeyMap.get("AppFloodSecretKey");
+		String AppKey = manifestKeyMap.get("appFloodAppKey");
+		String SecretKey = manifestKeyMap.get("appFloodSecretKey");
 
 		logger.log("{appflood} Installing AppFlood for AppKey:", AppKey);
 
