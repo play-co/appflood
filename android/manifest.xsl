@@ -2,8 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <xsl:param name="package" />
-	<xsl:param name="AppFloodAppKey"></xsl:param>
-	<xsl:param name="AppFloodSecretKey"></xsl:param>
+	<xsl:param name="appFloodAppKey"></xsl:param>
+	<xsl:param name="appFloodSecretKey"></xsl:param>
 
     <xsl:template match="permission[@android:name='COM.PACKAGE.NAME.permission.C2D_MESSAGE']" >
 		<permission android:protectionLevel="signature">
@@ -29,12 +29,12 @@
 		</category>
 	</xsl:template>
 
-	<xsl:template match="meta-data[@android:name='AppFloodAppKey']">
-		<meta-data android:name="AppFloodAppKey" android:value="{$AppFloodAppKey}"/>
+	<xsl:template match="meta-data[@android:name='appFloodAppKey']">
+		<meta-data android:name="appFloodAppKey" android:value="{$appFloodAppKey}"/>
 	</xsl:template>
 
-	<xsl:template match="meta-data[@android:name='AppFloodSecretKey']">
-		<meta-data android:name="AppFloodSecretKey" android:value="{$AppFloodSecretKey}"/>
+	<xsl:template match="meta-data[@android:name='appFloodSecretKey']">
+		<meta-data android:name="appFloodSecretKey" android:value="{$appFloodSecretKey}"/>
 	</xsl:template>
 
 	<!--	<xsl:strip-space elements="*" />-->

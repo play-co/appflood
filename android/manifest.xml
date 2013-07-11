@@ -8,8 +8,8 @@
 <!--END_PLUGINS_MANIFEST-->
 <!--START_PLUGINS_APPLICATION-->
 	<!--AppFlood-->
-	<meta-data android:name="AppFloodAppKey" android:value="" />
-	<meta-data android:name="AppFloodSecretKey" android:value="" />
+	<meta-data android:name="appFloodAppKey" android:value="" />
+	<meta-data android:name="appFloodSecretKey" android:value="" />
 	<activity android:name="com.appflood.AFPanelActivity" android:configChanges="keyboardHidden">
 	</activity>
 	<activity android:name="com.appflood.AFFullScreenActivity" android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Translucent" android:launchMode="singleTask">

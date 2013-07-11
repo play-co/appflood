@@ -2,7 +2,7 @@
 
 AppFlood support is still in progress.  In the meantime you can use this plugin as
 a starting point in case you want to integrate it yourself.  Right now only the
-Android platform is working and only for analytics it does not show advertising.
+Android platform is working and only for analytics; it does not show advertising.
 
 ## Usage
 
@@ -27,10 +27,9 @@ Under the Android section, you can configure the AppFlood plugin:
 			"72": "resources/icons/android72.png",
 			"96": "resources/icons/android96.png"
 		},
-		"AppFloodAppKey": "IwLrJrigtQAhf6KX",
-		"AppFloodSecretKey": "4e0XRoegdd4L51b7724d"
+		"appFloodAppKey": "IwLrJrigtQAhf6KX",
+		"appFloodSecretKey": "4e0XRoegdd4L51b7724d"
 	},
 ~~~
 
 You can test for successful integration on the AppFlood website.
-
