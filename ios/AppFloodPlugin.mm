@@ -34,6 +34,8 @@
 
 - (void) showInterstitial:(NSDictionary *)jsonObject {
 	@try {
+		NSLog(@"{appFlood} Showing interstitial");
+
 		[AppFlood showInterstitial];
 	}
 	@catch (NSException *exception) {
