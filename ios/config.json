@@ -1,6 +1,14 @@
 {
 	"code": [
+		"AppFlood.h",
+		"AppFloodPlugin.h",
+		"AppFloodPlugin.mm"
 	],
 	"frameworks": [
+		"libz.dylib",
+		"MobileCoreServices",
+		"Security",
+		"AdSupport",
+		"libAppFlood_device.a"
 	]
 }
