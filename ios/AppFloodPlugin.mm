@@ -32,4 +32,13 @@
 	}
 }
 
+- (void) showInterstitial:(NSDictionary *)jsonObject {
+	@try {
+		[AppFlood showInterstitial];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"{appFlood} Failure during interstitial: %@", exception);
+	}
+}
+
 @end

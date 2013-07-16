@@ -1,10 +1,10 @@
 # Game Closure DevKit Plugin: AppFlood
 
-AppFlood support is still in progress.  In the meantime you can use this plugin as
-a starting point in case you want to integrate it yourself.  Right now only the
-Android platform is working and only for analytics; it does not show advertising.
+This plugin adds ad interstitial support from the [AppFlood service](http://appflood.com) for Android and iOS platforms.
 
 ## Usage
+
+To use AppFlood to display an ad in your game, first use the [AppFlood website](http://appflood.com) to create a new app entry to get your AppKey and SecretKey.
 
 Install the plugin with `basil install appflood`.
 
@@ -16,7 +16,7 @@ Include it in the `manifest.json` file under the "addons" section for your game:
 ],
 ~~~
 
-Under the Android section, you can configure the AppFlood plugin:
+Under the Android/iOS sections, you can configure the AppFlood plugin:
 
 ~~~
 	"android": {
@@ -32,4 +32,32 @@ Under the Android section, you can configure the AppFlood plugin:
 	},
 ~~~
 
+~~~
+	"ios": {
+		"bundleID": "mmp",
+		"appleID": "568975017",
+		"version": "1.0.3",
+		"icons": {
+			"57": "resources/images/promo/icon57.png",
+			"72": "resources/images/promo/icon72.png",
+			"114": "resources/images/promo/icon114.png",
+			"144": "resources/images/promo/icon144.png"
+		},
+		"appFloodAppKey": "18NDFokFS5pkCQxJ",
+		"appFloodSecretKey": "XP46S8Mx11d6L51e49e0f"
+	},
+~~~
+
 You can test for successful integration on the AppFlood website.
+
+Then you can edit your game JavaScript code to import the AppFlood object:
+
+~~~
+import plugins.appflood.appflood as appflood;
+~~~
+
+And use the `showInterstitial` method to show an ad:
+
+~~~
+appflood.showInterstitial();
+~~~
