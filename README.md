@@ -53,11 +53,11 @@ You can test for successful integration on the AppFlood website.
 Then you can edit your game JavaScript code to import the AppFlood object:
 
 ~~~
-import plugins.appflood.appflood as appflood;
+import plugins.appflood.appFlood as appFlood;
 ~~~
 
 And use the `showInterstitial` method to show an ad:
 
 ~~~
-appflood.showInterstitial();
+appFlood.showInterstitial();
 ~~~
