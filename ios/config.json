@@ -9,6 +9,6 @@
 		"MobileCoreServices",
 		"Security",
 		"AdSupport",
-		"libAppFlood_device.a"
+		"libAppFlood.a"
 	]
 }
