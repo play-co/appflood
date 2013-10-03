@@ -1,4 +1,8 @@
+import device;
+
 import event.Emitter;
+
+
 var AppFlood = Class(event.Emitter, function () {
 	this.showInterstitial = function (callback, cbArgs) {
 		logger.log("{appFlood} Showing interstitial");
@@ -22,10 +26,10 @@ var AppFlood = Class(event.Emitter, function () {
 
     this._initSimulated = function () {};
 
-    if (NATIVE && NATIVE.events && NATIVE.plugins) {
-        this.init = this._initNATIVE;
-    } else {
+    if (!GLOBAL.NATIVE || device.simulatingMobileNative) {
         this.init = this._initSimulated;
+    } else {
+        this.init = this._initNATIVE;
     }
 
 });
