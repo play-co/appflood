@@ -29,18 +29,43 @@ import com.appflood.AppFlood;
 import com.appflood.AppFlood.AFEventDelegate;
 import com.appflood.AppFlood.AFRequestDelegate;
 
-public class AppFloodPlugin implements IPlugin {
+public class AppFloodPlugin implements IPlugin, AFEventDelegate {
 	Context _ctx;
 	HashMap<String, String> manifestKeyMap = new HashMap<String,String>();
+    Activity afActivity;
 
 	public AppFloodPlugin() {
 	}
+
+    public class AppFloodEvent extends com.tealeaf.event.Event {
+        boolean success;
+        String message;
+        int errorCode;
+
+        public AppFloodEvent(String s) {
+            super("appflood");
+            this.message = s;
+        }
+
+        public AppFloodEvent(String s, int ec) {
+            super("appflood");
+            this.message = s;
+            this.errorCode = ec;
+            logger.log("{appflood} event failed: message='" + s + "' code=" + ec);
+        }
+    }
+
 
 	public void onCreateApplication(Context applicationContext) {
 		_ctx = applicationContext;
 	}
 
+    public void showInterstitial(String jsonData) {
+        AppFlood.showFullScreen(afActivity);
+    }
+
 	public void onCreate(Activity activity, Bundle savedInstanceState) {
+        afActivity = activity;
 		PackageManager manager = activity.getBaseContext().getPackageManager();
 		String[] keys = {"appFloodAppKey", "appFloodSecretKey"};
 		try {
@@ -62,7 +87,16 @@ public class AppFloodPlugin implements IPlugin {
 
 		// Connect with the AppFlood server.
 		AppFlood.initialize(_ctx, AppKey, SecretKey, AppFlood.AD_ALL);
+        AppFlood.setEventDelegate(this);
 	}
+
+    public void onClick(JSONObject _) {
+        EventQueue.pushEvent(new AppFloodEvent("appFlood ad clicked"));
+    }
+
+    public void onClose(JSONObject _) {
+        EventQueue.pushEvent(new AppFloodEvent("appFlood ad closed"));
+    }
 
 	public void onResume() {
 	}
